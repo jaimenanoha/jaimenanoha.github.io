@@ -195,11 +195,3 @@ h1 {
         transition: none;
     }
 }
-
-footer {
-    position: fixed;
-    right: 1.5rem;
-    bottom: 1rem;
-    font-size: 0.7rem;
-    color: rgba(246, 244, 241, 0.55);
-}
