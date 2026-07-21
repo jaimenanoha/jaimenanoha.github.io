@@ -1,61 +1,49 @@
-/* Algemene instellingen */
-
 * {
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
     min-height: 100%;
 }
 
 body {
-    min-height: 100vh;
     margin: 0;
     color: #f6f4f1;
     background-color: #172010;
     font-family: "Inter", sans-serif;
 }
 
-
-/* Grote achtergrondfoto */
-
 .hero {
-
-    position: relative;
-
     min-height: 100vh;
     min-height: 100svh;
 
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 
-    justify-content: center;
-    align-items: flex-start;
-
-    text-align: center;
-
-    padding: 8vh 5vw;
-
-    transform: translateY(-2vh);
+    padding: 7vh 5vw;
 
     background-image:
         linear-gradient(
             90deg,
-            rgba(8,14,6,.58) 0%,
-            rgba(8,14,6,.34) 30%,
-            rgba(8,14,6,.10) 65%,
-            rgba(8,14,6,.03) 100%
+            rgba(8, 14, 6, 0.58) 0%,
+            rgba(8, 14, 6, 0.34) 30%,
+            rgba(8, 14, 6, 0.10) 65%,
+            rgba(8, 14, 6, 0.03) 100%
         ),
         url("images/hero2.jpg");
 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-
 }
 
-
-/* Naam */
+.content {
+    width: min(44rem, 48vw);
+    text-align: center;
+    transform: translateY(-2vh);
+}
 
 h1 {
     margin: 0;
@@ -63,42 +51,29 @@ h1 {
     font-family: "Cormorant Garamond", Georgia, serif;
     font-size: clamp(3.4rem, 5.7vw, 5.8rem);
     font-weight: 500;
-    line-height: 0.9;
+    line-height: 0.92;
     letter-spacing: -0.025em;
 
     text-shadow: 0 2px 25px rgba(0, 0, 0, 0.25);
 }
 
-
-/* Instrumenten */
-
 .subtitle {
-    margin: 1.2rem 0 0;
+    margin: 1.1rem 0 0;
 
-    font-size: clamp(.95rem,1.1vw,1.05rem);
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
     font-weight: 300;
     letter-spacing: 0.16em;
-    text-transform: none;
 
     color: rgba(246, 244, 241, 0.88);
 }
 
-
-/* Links */
-
 .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    display:flex;
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:1rem 1.8rem;
-
-    margin-top:3.5rem;
-
-    max-width:700px;
-
+    gap: 1rem 1.6rem;
+    margin-top: 3rem;
 }
 
 .buttons a {
@@ -109,7 +84,7 @@ h1 {
 
     font-size: 0.82rem;
     font-weight: 400;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
 
     padding: 0.3rem 0;
@@ -155,51 +130,52 @@ h1 {
     outline-offset: 7px;
 }
 
-
-/* Mobiele telefoons */
-
 @media (max-width: 700px) {
 
     .hero {
+        align-items: flex-end;
         justify-content: flex-end;
 
-        padding: 3.5rem 1.5rem;
+        padding: 3rem 1.5rem;
 
         background-image:
             linear-gradient(
                 180deg,
-                rgba(8, 14, 6, 0.08) 0%,
-                rgba(8, 14, 6, 0.18) 42%,
+                rgba(8, 14, 6, 0.06) 0%,
+                rgba(8, 14, 6, 0.15) 45%,
                 rgba(8, 14, 6, 0.82) 100%
             ),
             url("images/hero2.jpg");
 
-        background-position: 58% center;
+        background-position: 56% center;
+    }
+
+    .content {
+        width: 100%;
+        text-align: center;
+        transform: none;
     }
 
     h1 {
-        font-size: clamp(3.4rem, 17vw, 5rem);
-        line-height: 0.88;
+        font-size: clamp(3.1rem, 15vw, 4.6rem);
+        line-height: 0.9;
     }
 
     .subtitle {
-        margin-top: 1rem;
-        font-size: 0.78rem;
-        letter-spacing: 0.2em;
+        margin-top: 0.9rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
     }
 
     .buttons {
-        gap: 1rem 1.4rem;
-        margin-top: 2.3rem;
+        gap: 1rem 1.35rem;
+        margin-top: 2.2rem;
     }
 
     .buttons a {
-        font-size: 0.76rem;
+        font-size: 0.75rem;
     }
 }
-
-
-/* Minder beweging wanneer de bezoeker dat prefereert */
 
 @media (prefers-reduced-motion: reduce) {
 
