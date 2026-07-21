@@ -20,24 +20,31 @@ body {
 /* Grote achtergrondfoto */
 
 .hero {
+
     position: relative;
+
     min-height: 100vh;
     min-height: 100svh;
 
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: flex-start;
 
+    text-align: center;
+
     padding: 8vh 5vw;
+
+    transform: translateY(-2vh);
 
     background-image:
         linear-gradient(
             90deg,
-            rgba(8, 14, 6, 0.58) 0%,
-            rgba(8, 14, 6, 0.34) 30%,
-            rgba(8, 14, 6, 0.12) 65%,
-            rgba(8, 14, 6, 0.05) 100%
+            rgba(8,14,6,.58) 0%,
+            rgba(8,14,6,.34) 30%,
+            rgba(8,14,6,.10) 65%,
+            rgba(8,14,6,.03) 100%
         ),
         url("images/hero2.jpg");
 
@@ -45,7 +52,6 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
 
-    transform: translateY(-3vh);
 }
 
 
@@ -81,11 +87,18 @@ h1 {
 /* Links */
 
 .buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 1.6rem;
 
-    margin-top: 3.5rem;
+    display:flex;
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:1rem 1.8rem;
+
+    margin-top:3.5rem;
+
+    max-width:700px;
+
 }
 
 .buttons a {
