@@ -1,83 +1,195 @@
-body{
+/* Algemene instellingen */
 
-    margin:0;
-    font-family:Georgia, serif;
-    background:#111;
-    color:white;
-
+* {
+    box-sizing: border-box;
 }
 
-.hero{
-
-    height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
+html {
+    min-height: 100%;
 }
 
-h1{
-
-    font-size:4rem;
-
-    margin:0;
-
-    font-weight:normal;
-
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: #f6f4f1;
+    background-color: #172010;
+    font-family: "Inter", sans-serif;
 }
 
-.subtitle{
 
-    margin-top:15px;
+/* Grote achtergrondfoto */
 
-    font-size:1.2rem;
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
 
-    color:#cccccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
+    padding: 8vh 8vw;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(8, 14, 6, 0.72) 0%,
+            rgba(8, 14, 6, 0.48) 30%,
+            rgba(8, 14, 6, 0.12) 65%,
+            rgba(8, 14, 6, 0.05) 100%
+        ),
+        url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-.buttons{
 
-    margin-top:50px;
+/* Naam */
 
+h1 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -0.025em;
+
+    text-shadow: 0 2px 25px rgba(0, 0, 0, 0.25);
 }
 
-.buttons a{
 
-    color:white;
+/* Instrumenten */
 
-    text-decoration:none;
+.subtitle {
+    margin: 1.2rem 0 0;
 
-    border:1px solid white;
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+    font-weight: 300;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
 
-    padding:12px 24px;
-
-    margin:10px;
-
-    display:inline-block;
-
-    transition:.3s;
-
+    color: rgba(246, 244, 241, 0.88);
 }
 
-.buttons a:hover{
 
-    background:white;
+/* Links */
 
-    color:black;
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
 
+    margin-top: 3.5rem;
 }
 
-footer{
-    position:fixed;
-    bottom:25px;
-    width:100%;
-    text-align:center;
-    color:#777;
-    font-size:.9rem;
+.buttons a {
+    position: relative;
+
+    color: #f6f4f1;
+    text-decoration: none;
+
+    font-size: 0.88rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    padding: 0.3rem 0;
+    opacity: 0.9;
+
+    transition:
+        opacity 180ms ease,
+        transform 180ms ease;
+}
+
+.buttons a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background: currentColor;
+
+    transform: scaleX(0);
+    transform-origin: right center;
+
+    transition: transform 220ms ease;
+}
+
+.buttons a:hover,
+.buttons a:focus-visible {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.buttons a:hover::after,
+.buttons a:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+}
+
+.buttons a:focus-visible {
+    outline: 1px solid rgba(246, 244, 241, 0.75);
+    outline-offset: 7px;
+}
+
+
+/* Mobiele telefoons */
+
+@media (max-width: 700px) {
+
+    .hero {
+        justify-content: flex-end;
+
+        padding: 3.5rem 1.5rem;
+
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(8, 14, 6, 0.08) 0%,
+                rgba(8, 14, 6, 0.18) 42%,
+                rgba(8, 14, 6, 0.82) 100%
+            ),
+            url("images/hero.jpg");
+
+        background-position: 58% center;
+    }
+
+    h1 {
+        font-size: clamp(3.4rem, 17vw, 5rem);
+        line-height: 0.88;
+    }
+
+    .subtitle {
+        margin-top: 1rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.2em;
+    }
+
+    .buttons {
+        gap: 1rem 1.4rem;
+        margin-top: 2.3rem;
+    }
+
+    .buttons a {
+        font-size: 0.76rem;
+    }
+}
+
+
+/* Minder beweging wanneer de bezoeker dat prefereert */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .buttons a,
+    .buttons a::after {
+        transition: none;
+    }
 }
