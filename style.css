@@ -29,7 +29,7 @@ body {
     justify-content: center;
     align-items: flex-start;
 
-    padding: 8vh 8vw;
+    padding: 8vh 5vw;
 
     background-image:
         linear-gradient(
@@ -44,6 +44,8 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+
+    transform: translateY(-3vh);
 }
 
 
@@ -53,7 +55,7 @@ h1 {
     margin: 0;
 
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(4rem, 8vw, 7.5rem);
+    font-size: clamp(3.8rem, 6.4vw, 6.5rem);
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -0.025em;
@@ -81,7 +83,7 @@ h1 {
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 2rem;
+    gap: 1rem 1.6rem;
 
     margin-top: 3.5rem;
 }
@@ -92,7 +94,7 @@ h1 {
     color: #f6f4f1;
     text-decoration: none;
 
-    font-size: 0.88rem;
+    font-size: 0.84rem;
     font-weight: 400;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -192,4 +194,12 @@ h1 {
     .buttons a::after {
         transition: none;
     }
+}
+
+footer {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1rem;
+    font-size: 0.7rem;
+    color: rgba(246, 244, 241, 0.55);
 }
